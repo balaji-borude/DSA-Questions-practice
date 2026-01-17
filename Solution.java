@@ -1,4 +1,5 @@
 class Solution {
+    
     public static boolean isPalindrome(String s) {
 
         // int n = s.length();
