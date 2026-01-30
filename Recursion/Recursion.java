@@ -58,6 +58,37 @@ public class Recursion {
         return res;
     }
 
+    // check array is sorted or not 
+    public static boolean isSorted(int arr[],int i){
+        if(i == arr.length-1){
+            return true;
+        };
+
+        if(arr[i] > arr[i+1]){
+            return false;
+        };
+
+        return isSorted(arr, i+1);
+
+    }
+
+    // find the first occurancce of the key 
+    public static int firstOccurance(int arr[],int key,int i){
+        // base case -- where we have to  stop the recurance and key not found case
+        if(i == arr.length-1){
+            return -1;
+        };
+
+        // key found case 
+        if(arr[i] == key){
+            return i;
+        }
+
+        // if key  not found then cal the recursive function 
+        return firstOccurance(arr, key, i+1);
+
+
+    }
 
     public static void main(String[] args) {
         //int result = factorial(5);
@@ -75,13 +106,22 @@ public class Recursion {
          * F(6) = 3 + 5 = 8
          */
 
-
         // Print increasing order
         // int  num =10;
         // PrintInc(num);
 
         //sum of naturals 
-        System.out.println(SumOfNaturals(5));
+        //System.out.println(SumOfNaturals(5));
+
+        // checking array is sorted or not 
+        // int arr[]={1,2,3,4};
+        //  System.out.println(isSorted(arr, 0));
+
+        // find the first occurance --
+            // time and space complexity = O(n)
+        int arr[]={1,2,4,5,6,4,3,2,7,6,5};
+        System.out.println("The key found at "+firstOccurance(arr, 5, 0) + " index");
+
     }
 
 }
