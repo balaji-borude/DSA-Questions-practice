@@ -20,8 +20,6 @@ public class Recursion {
         if(num == 1) {
             return 1;
         }
-         // reduction kel --> 
-
         // number la Print kele + parat function call kele ;
         return num + PrintDec(num);
     }
@@ -90,6 +88,31 @@ public class Recursion {
 
     }
 
+    // 26-02-2022 - Practice
+    public static void PrintDescresingOrder(int num){
+        //base case
+        if(num ==1){
+            System.out.print(num + " ");
+            return;
+        };
+        System.out.print( num + " ");
+
+        PrintDescresingOrder(num-1);
+
+    };
+
+    public static void PrintIncreasingOrder(int num){
+        // base case
+        if(num ==1){
+            System.out.println(num + " ");
+            return;
+        };
+
+        PrintIncreasingOrder(num - 1);
+        System.out.println(num + " ");
+    };
+
+
     public static void main(String[] args) {
         //int result = factorial(5);
         // System.out.println(factorial(5));
@@ -108,7 +131,7 @@ public class Recursion {
 
         // Print increasing order
         // int  num =10;
-        // PrintInc(num);
+       // PrintInc(10);
 
         //sum of naturals 
         //System.out.println(SumOfNaturals(5));
@@ -119,9 +142,14 @@ public class Recursion {
 
         // find the first occurance --
             // time and space complexity = O(n)
-        int arr[]={1,2,4,5,6,4,3,2,7,6,5};
-        System.out.println("The key found at "+firstOccurance(arr, 5, 0) + " index");
+        // int arr[]={1,2,4,5,6,4,3,2,7,6,5};
+        // System.out.println("The key found at "+firstOccurance(arr, 5, 0) + " index");
 
+
+        // 26-02-2022 - Practice
+        //PrintDescresingOrder(10);
+        int n =10;
+        PrintIncreasingOrder(n);
     }
 
 }
