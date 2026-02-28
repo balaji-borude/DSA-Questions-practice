@@ -6,12 +6,11 @@ public class Recursion {
 
     // factorial function
     public static int factorial(int num) {
-        // base case
-        if (num == 0) {
-            return 1;
-        }
-        int res = num * factorial(num - 1);
-        return res;
+        // base case --> factorial of zero is -> 1
+        if(num==0) return 1;
+
+        int result = num * factorial(num-1);
+        return result;
     };
 
     // Print the value from 10 to 1 by recursion
@@ -57,18 +56,15 @@ public class Recursion {
     }
 
     // check array is sorted or not 
-    public static boolean isSorted(int arr[],int i){
-        if(i == arr.length-1){
-            return true;
-        };
-
-        if(arr[i] > arr[i+1]){
-            return false;
-        };
-
-        return isSorted(arr, i+1);
-
-    }
+    // public static boolean isSorted(int arr[],int i){
+    //     if(i == arr.length-1){
+    //         return true;
+    //     };
+    //     if(arr[i] > arr[i+1]){
+    //         return false;
+    //     };
+    //     return isSorted(arr, i+1);
+    // }
 
     // find the first occurancce of the key 
     public static int firstOccurance(int arr[],int key,int i){
@@ -112,44 +108,62 @@ public class Recursion {
         System.out.println(num + " ");
     };
 
+    // check array is Sorted or not 
+    public static boolean isSorted(int[] nums, int i){
+
+        // base case
+        if(i==nums.length-1) return true;
+
+        if(nums[i] > nums[i+1]){
+            return false;
+        };
+
+        return isSorted(nums, i+1); // recursivly calling isSorted aray function
+       
+    }
+
+    // find first Occurence of the element in an array
+    public static int FirstOccurance(int[]nums, int key, int i){
+
+        // base case
+        if(i==nums.length-1) return -1;
+
+        // fiound case
+        if(nums[i]== key) return i;
+
+        return FirstOccurance(nums, key, i+1);
+
+    }
+
+    // find the lastOccurance of element in an array 
+    public static int lastOccurance(int[] nums , int key, int i){
+        // base case --> if we reach to the last element of an array and not found key then return  
+        if( i==nums.length-1) return -1; 
+
+        // first --> check next element 
+        int isFound = lastOccurance(nums, key, i+1);
+
+        //jr isFound madhe element bhetla tr return ke
+        if(isFound ==-1 && nums[i]==key){
+            return i;
+        }
+
+        return isFound;
+        // if element not found in next then check for self (like in first occurance);
+        // if(nums[i]==key) return i;
+        
+
+    }
+
 
     public static void main(String[] args) {
-        //int result = factorial(5);
-        // System.out.println(factorial(5));
-
-        // PrintDec(10);
-        //System.out.println(Fibonacci(6));
-        /*
-         * F(0) = 0
-         * F(1) = 1
-         * F(2) = 0 + 1 = 1
-         * F(3) = 1 + 1 = 2
-         * F(4) = 1 + 2 = 3
-         * F(5) = 2 + 3 = 5
-         * F(6) = 3 + 5 = 8
-         */
-
-        // Print increasing order
-        // int  num =10;
-       // PrintInc(10);
-
-        //sum of naturals 
-        //System.out.println(SumOfNaturals(5));
-
-        // checking array is sorted or not 
-        // int arr[]={1,2,3,4};
-        //  System.out.println(isSorted(arr, 0));
-
-        // find the first occurance --
-            // time and space complexity = O(n)
-        // int arr[]={1,2,4,5,6,4,3,2,7,6,5};
-        // System.out.println("The key found at "+firstOccurance(arr, 5, 0) + " index");
+       
+        int num[]={1,2,3,4,5,4,3,2,46,8,5,3,44,66,57};
+        //System.out.println(isSorted(num, 0));
+        // System.out.println(FirstOccurance(num, 5, 0));
+        System.out.println(lastOccurance(num, 5, 0));
 
 
-        // 26-02-2022 - Practice
-        //PrintDescresingOrder(10);
-        int n =10;
-        PrintIncreasingOrder(n);
     }
 
 }
