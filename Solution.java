@@ -29,8 +29,18 @@ class Solution {
         return true;
     };
 
+    // print n to 1 
+    public static void Printdecending(int num){
+        for(int i=num; i>=1; i--){
+            System.out.println(i);
+        }
+    }
+
+
     public static void main(String[] args) {
         String s= "A man, a plan, a canal: Panama";
-       System.out.println( isPalindrome(s));
+       //System.out.println( isPalindrome(s));
+
+       Printdecending(10);
     }
 }
