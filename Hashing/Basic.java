@@ -16,6 +16,17 @@ public class Basic {
 
         System.out.println(hm);
 
+        // 2.  .get(key) --> get the value from the hashmap
+        System.out.println(hm.get("India"));
+
+        //3.  .containsKey(key) ---> return if the key is present in the hasTable 
+        System.out.println(hm.containsKey("China"));
+
+        //4.  .remove(key) --> remove the key from the hashtable 
+        hm.remove("Russia");
+
+        System.out.println(hm);
+
 
 
 
