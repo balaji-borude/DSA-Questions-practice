@@ -12,7 +12,7 @@ public class Keyword {
         
         // apan kontya pn object madhe schoolName define kele ki te sarv object la use hote 
         Student s2 = new Student();
-        s2.SchoolName = "CTMK school";
+        // s2.SchoolName = "CTMK school";
 
         // check kara 
         Student s3 = new Student();

@@ -1,48 +1,30 @@
-// Basic Promise Example 
+// Hoisiting --> Hoisting is the default behaviour of the Js Engine where all the  variables and function declaration are moved to the top of the scope before the code execution.
 
-// Promise is the object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+// variable hoisting with var
+console.log(a); // undefined
+a = 2;
 
-// const promise = new Promise((resolve,reject)=>{
-//     const result = true;
+var a; // this is hoisted to the top and set the value of a  to -->  undefined
 
-//     if(result){
-//         resolve("Success");
-//     }else{
-//         reject("Promise Rejected");
-//     }
-// });
+// variable hoisting with let and const
+// console.log(b); // ReferenceError: Cannot access 'b' before initialization
+// where let and const are hoisted to top but not ininitilized and they are in temporal dead zone until the line where they are initialized. so we cannot access them before initialization.
+// console.log(b);
 
-const promise = new Promise((resolve,reject)=>{
-    resolve("Success");
-   
-})
+// let b;
+// b=3;
 
-.then(()=>{console.log("Promise Fulfilled ")})
-.catch(()=>{console.log("Promise Rejected ")});
+// Higher Oeder function
 
-
-// ASync and await 
-
-async function test() {
-  return 5;
-};
-
-let result =   test();
-console.log(result); // it return Promise by default
-
-// but when we use await keyword it return the value directly
-let result2 = await test();
-console.log(result2);
-
-
-// use of await keyword
-async function getData() {
-  const result = await Promise.resolve("Hello");
-  console.log(result);
+function func() {
+  console.log("Hello World");
 }
 
-getData();
+function func2(action) {
+  console.log("Pringting from the higher order function");
+  action();
+  action();
+}
+func2(func);
 
-
-// Debouncing 
-
+// .map() , .filter(), .reduce(), .forEach(), .find(), .some() , .every() --> are the POPULAR Highere order function
