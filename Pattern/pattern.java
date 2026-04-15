@@ -67,6 +67,7 @@ public class pattern {
 
             System.out.println();
         }
+        
 
     }
 }
