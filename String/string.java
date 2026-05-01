@@ -1,6 +1,6 @@
 import java.util.*;
 
-import javax.print.DocFlavor.CHAR_ARRAY;
+import java.util.*;
 
 class string {
 
@@ -112,6 +112,7 @@ class string {
     // eg. int a=4; --> we cant convert --> a.toString --> X
     // eg. but Integer a=8; --> can convert --< a.toString --> true we can covert it
     // , beczz Integer is object
+    
     public static String stringBuilder() {
         // crete stringBuilder and assign by Empty string
         StringBuilder sb = new StringBuilder("");
