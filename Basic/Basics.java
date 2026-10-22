@@ -1,55 +1,75 @@
 package Basic;
+class Basics{
 
-public class Basics {
-    
-    public static void main(String[] args) {
-
-       // Learning Integer
-        int arr[];
-        String arr1[]={"balaji","Borude"};
-        int arr2[]=new int[5];
-        arr2[0]=10;
-        arr2[1]=20;
-        arr2[2]=30;
-
-        for(int i : arr2){
-            System.out.println(i);
+    // Q1. Given an integer n, count the total number of digits present in the number.
+    public static int countDigit(int num ){
+        int count =0; 
+        int n = num;
+        while(n !=0){
+            int lastDigit = n%10;
+            System.out.println("LastDigit " + lastDigit);
+            count++;
+            n = n/10;
         }
-        System.out.println(arr2[2]);
+
+        return count;
+
+    }
 
 
-        // Learning String
-
-        String str = "I am learning Java";
-        String name = "Balaji";
-        String str2 = "Love";
-
-        // System.out.println(name.length());
-        // System.out.println(name.charAt(1));
-
-        // .contains();  --> if string contain charecter of sequence then it return true, otherwise false
-        //boolean result = str.contains("Java");
-        //System.out.println(result);
-
-        //System.out.println(name.contains("ala"));
-
-        // .substring() -->
-        //System.out.println(str.substring(1,18));
-
-        //System.out.println(str.toUpperCase());
-
-
-        // .split(regex) --> split by using spaces , comma , or .
-        // always retrun a array
-        // String fruits = "apple,banana,mango";
-
-        // String[] arr = fruits.split(",");   // Split on the basic of --> " , "
-
-        // for(String items : arr){
-        //     System.out.println(items);
-        // };
+    // Q2. Given an integer n, reverse its digits. int put n = 1234
+    public static int reverseInteger(int num){
+        int n=num;
+        int reverseNumber=0;
+        while(n !=0){
+            int lastDigit = n%10;
+            reverseNumber = reverseNumber*10 + lastDigit;
+            n=n/10;
+        }
+        return reverseNumber;
+    }
+    
+    //Q3. Given an integer n, check wheather it is a palindrome or not 
+    public static boolean checkPalindrome(int num ){
+        int n = num;
+        int revNum = 0;
+        while(n !=0){
+            int lastDigit = n%10;
+             revNum = revNum *10 +lastDigit;
+            n = n/10;
 
 
+        }
+        if(num == revNum){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    // Q4. Given two integers a and b, find their GCD (Greatest Common Divisor).
+    public static int findGCDorHCF(int a, int b){
+        while(b!=0){
+            int temp = b;
+            b=a%b;
+            a= temp;
+             
+        }
+        return a;
+    }
+
+    public static void main(String[]args){
+
+       int result = countDigit(12345);
+       System.out.println("the count is -->"+ result);
+
+       int reverseNum = reverseInteger( 1234);
+       System.out.println("Reverse Number is ==> " + reverseNum);
+
+       System.out.println("number is palindrome " + checkPalindrome(121));
+        
+       System.out.println(" GCD or HCF is  -->" +  findGCDorHCF(12, 18));
 
     }
 }

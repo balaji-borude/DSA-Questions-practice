@@ -1,20 +1,29 @@
-package Dsa_Sheet_Problems;
+
 import java.util.*;
 public class DsaSheet {
     
     // Q1. Given an integer n, count the total number of digits present in the number
     public static int Countnumber(int n){
-        if(n==1) return 1;
+        // if(n==1) return 1;
+        // int num = n;
+        // int count =0;
+        // while(num != 0){
+        //     //System.out.println("enete in the loop");
+        //     int lastDigit = num%10;
+        //     num = num /10;
+        //     count++;
+        // }
+
+
+        // return count;
+        int count=0;
         int num = n;
-        int count =0;
-        while(num != 0){
-            //System.out.println("enete in the loop");
-            int lastDigit = num%10;
-            num = num /10;
-            count++;
+        while(num !=0){
+            num = num%10;
+            num = num/10;
+            count ++;
+
         }
-
-
         return count;
     }
 
@@ -23,14 +32,15 @@ public class DsaSheet {
 
         int num =n;
         int reverseNum =0;
-
         while(num!=0){
             int lastDigit = num % 10;
              num = num/10;
             reverseNum = (reverseNum*10)+lastDigit;
         }
-
         return reverseNum;
+
+
+        
     }
 
     // Q3.Given an integer n, check whether it is a palindrome.
@@ -63,14 +73,46 @@ public class DsaSheet {
         return num1;
     };
 
+    // Q5. A number is an Armstrong number if the sum of its digits raised to the power of number of digits equals the number itself.
+    public static void ArmstrongNumber(int num){
+        int count=0;
+        int sum =0;
+        int n=num;
+        while(n !=0){
+            int reminder=n%10;
+            System.out.println("reminder" + reminder);
+            sum =sum+reminder;
+            n=n/10;
+            System.out.println("remainig number"+ n);
+            count++;
 
+        }
 
+        System.out.println("count is --> "+ count);
+        System.out.println("sum is --> "+ sum);
+        System.out.println("");
+    }
+
+    // Q6. Given an integer n, print all its divisors. 
+    public static void Divisors(int n){
+        int num = n;
+        int divisor =1;
+
+        while(divisor <= num){
+            if(num%divisor == 0){
+                System.out.println(divisor);
+            }
+            divisor++;
+        }
+    }
+
+    // Q7. 
 
     public static void main(String[] args){
 
         System.out.println("Enter the Number ");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // int n = sc.nextInt();
         
         //System.out.println(Countnumber(n));
 
@@ -78,7 +120,11 @@ public class DsaSheet {
 
        // System.out.println(CheckPalindrome(n));
 
-       System.out.println(GCD(12, 18));
+        //    System.out.println(GCD(12, 18));
+
+        int num = sc.nextInt();
+
+         ArmstrongNumber(num);
 
 
 
